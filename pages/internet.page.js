@@ -1,4 +1,4 @@
-class internet {
+class Internet {
   get pageHeader() {
     // get pageHeader() { return $('h1.heading') }
     return $("h1.heading");
@@ -10,4 +10,4 @@ class internet {
     return $("#page-footer");
   }
 }
-module.exports = new internet();
+module.exports = new Internet();

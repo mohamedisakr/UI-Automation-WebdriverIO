@@ -20,11 +20,20 @@ class Internet {
   getLiText() {
     this.childElements.filter((element) => console.log(element.getText()));
   }
+  get firstLink() {
+    return $("ul li:nth-child(1) a");
+  }
   specificChildElement(index) {
     return this.parent.$(`li:nth-child(${index})`);
   }
   getSpecificElementText(index) {
     console.log(this.specificChildElement(index).getText());
+  }
+  clickOnLink() {
+    if (this.firstLink.isDisplayed() === true) {
+      this.firstLink.click();
+    }
+    browser.pause(5000);
   }
 }
 module.exports = new Internet();

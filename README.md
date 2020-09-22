@@ -36,7 +36,7 @@ const chaiWebdriver = require("chai-webdriverio").default;
 chai.use(chaiWebdriver(browser));
 ```
 
-## To add the Chai assertions
+## To add the Chai assertions (WebdriverIO configuration file "wdio.conf.js)
 
 (setting global asserts, global should, and global expect)
 
@@ -47,4 +47,15 @@ chai.use(chaiWebdriver(browser));
 global.assert = chai.assert;
 global.should = chai.should;
 global.expect = chai.expect;
+```
+
+## in package.json file
+
+1. in script section
+2. type
+
+```js
+"scripts": {
+    "test": "./node_modules/.bin/wdio ./wdio.conf.js"
+  },
 ```

@@ -91,6 +91,7 @@ class Internet {
     return $("#password");
   }
 
+  //
   enterUsername(theUsername) {
     this.username.waitForDisplayed();
     this.username.setValue = theUsername;
@@ -100,6 +101,34 @@ class Internet {
   enterPasswor(thePassword) {
     this.password.waitForDisplayed();
     this.password.setValue = thePassword;
+  }
+
+  //
+  figures(index) {
+    return $(".example .figure:nth-child(${index}) img");
+  }
+
+  //
+  figureDetails(index) {
+    return $(".example .figure:nth-child(${index}) .figcaption h5");
+  }
+
+  /**
+   * Hovers over the specified image
+   * @param {Number} index the specific index of the image
+   */
+  hoverOnFigure(index) {
+    this.figures(index).waitForDisplayed();
+    this.figures(index).moveTo(1, 1);
+  }
+
+  /**
+   * Returns the text of the figure details
+   * @param {Number} index the index of the element
+   */
+  getFigureDetailsText(index) {
+    this.figureDetails(index).waitForDisplayed();
+    return this.figureDetails(index).getText();
   }
 }
 module.exports = new Internet();

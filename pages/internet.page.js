@@ -172,5 +172,28 @@ class Internet {
   scrollToPageFooter() {
     this.pageFooter.moveTo();
   }
+
+  //
+  get hereLink() {
+    return $(".example a");
+  }
+
+  /**
+   * Click the "click here" link
+   */
+  clickHereLink() {
+    this.hereLink.waitForDisplayed();
+    this.hereLink.click();
+  }
+
+  //
+  get iframeBody() {
+    return $("#tinymce");
+  }
+
+  //
+  get iframe() {
+    return $("#mce_0_ifr"); // #mceu_27 #mce_0_ifr
+  }
 }
 module.exports = new Internet();

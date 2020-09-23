@@ -130,5 +130,40 @@ class Internet {
     this.figureDetails(index).waitForDisplayed();
     return this.figureDetails(index).getText();
   }
+
+  //
+  get target() {
+    return $(".example #target");
+  }
+
+  //
+  get result() {
+    return $(".example #result");
+  }
+
+  /**
+   * Clicks the target input field
+   */
+  clickTarget() {
+    this.target.waitForDisplayed();
+    this.target.click();
+  }
+
+  /**
+   * Send keybord keys to Target
+   * @param {String} text The keyboard text to enter
+   */
+  sendKeysToTarget(text) {
+    this.target.waitForDisplayed();
+    this.target.keys(text);
+  }
+
+  /**
+   * return the text of the return element
+   */
+  getResultText() {
+    this.result.waitForDisplayed();
+    return this.result.getText();
+  }
 }
 module.exports = new Internet();

@@ -1,5 +1,7 @@
-const page = require("../pages/internet.page");
 const { expect } = require("chai");
+const page = require("../pages/internet.page");
+
+//
 describe("Interacting with elements", () => {
   //
   it("Get text for element", () => {
